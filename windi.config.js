@@ -1,5 +1,8 @@
 export default {
   darkMode: 'class',
+  corePlugins: {
+    container: false
+  },
   theme: {
     extend: {
       colors: {

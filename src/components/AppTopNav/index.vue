@@ -37,7 +37,7 @@
         <li class="h-3.5 flex">
           <a class="link" href="javascript:;">
             <i class="iconfont icon-phone text-xs mr-0.5"></i>手机版
-            </a>
+          </a>
         </li>
       </ul>
     </div>
@@ -51,8 +51,11 @@ export default {
   name: 'AppTopnav',
   setup () {
     const store = useHomeStore()
+    console.log(store)
+    const { profile } = store
+
     return {
-      profile: store.profile
+      profile
     }
   }
 }

@@ -1,11 +1,11 @@
 <template>
-  <AppTopNav>顶部</AppTopNav>
-  <header>头部</header>
+  <AppTopNav />
+  <AppHeader />
   <router-view></router-view>
   <footer>底部</footer>
 </template>
 
 <script setup>
 import AppTopNav from '@/components/AppTopNav'
-
+import AppHeader from '@/components/AppHeader'
 </script>

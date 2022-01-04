@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useHomeStoreWithOut } from '@/store/modules/home'
 import router from '@/router'
 
-export const baseURL = 'http://pcapi-xiaotuxian-front-devtest.itheima.net/'
+export const baseURL = 'https://apipc-xiaotuxian-front.itheima.net'
 const instance = axios.create({
   baseURL,
   timeout: 5000
@@ -23,7 +23,9 @@ instance.interceptors.request.use(
 )
 
 instance.interceptors.response.use(
-  (res) => res.data,
+  (res) => {
+    return res.data.result ?? res.data
+  },
   (err) => {
     if (err.response && err.response.status === 401) {
       const store = useHomeStoreWithOut()
