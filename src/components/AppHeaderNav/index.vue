@@ -1,6 +1,6 @@
 <template>
   <ul class="w-[820px] flex justify-around pl-10 relative">
-    <li class="mr-10 w-[38px] text-center nav-item">
+    <li class="mr-10 w-[38px] text-center nav-item no-layer">
       <RouterLink class="link" to="/">首页</RouterLink>
     </li>
     <li
@@ -57,10 +57,15 @@ export default {
 </script>
 
 <style scoped lang="less">
-.nav-item:hover {
-  ~ .layer {
-    height: 132px;
-    opacity: 1;
+.nav-item {
+  &:hover {
+    .link {
+      color: @xtxColor;
+    }
+   &:not(.no-layer) ~ .layer {
+      height: 132px;
+      opacity: 1;
+    }
   }
 }
 .layer:hover {
